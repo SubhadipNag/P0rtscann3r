@@ -22,7 +22,7 @@ try:
     for port in range(1,65535):                                                      #Example for "port in range(50,81)"
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         socket.setdefaulttimeout(1)                                                  #to connect to a port , if the port not connectable
-        result = s.socket_ex((target,port))                                          #returns as error indicator
+        result = s.connect_ex((target,port))                                          #returns as error indicator
         #print("Checking port {}".format(port))                                      #here is checking all ports (also include the open ports)
         if result == 0:
             print("Port {} is open".format(port))
